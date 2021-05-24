@@ -11,6 +11,10 @@ body {
     padding-right: 40px;
 }
 
+.red {
+    color: rgb(255, 51, 52);
+}
+
 .background {
     height: calc(100vh - 70px);
     width: 100vw;
@@ -22,6 +26,7 @@ body {
     z-index: -1;
 }
 
+/* header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -156,7 +161,7 @@ body {
     width: 100vw;
     height: auto;
     position: fixed;
-    top: 70px;
+    top: 69px;
     left: 0;
     background: #fff;
     display: grid;
@@ -173,10 +178,20 @@ body {
     padding: 40px 0;
 }
 
+/* /header */
+
+/* screen */
 .screen {
     height: calc(100vh - 70px);
     background-color: rgba(255, 255, 255, .7);
 }
+
+.screen h1 {
+    margin: 0;
+    font-size: 55px;
+}
+
+/* /screen */
 
 
 @media (max-width: 960px) {
