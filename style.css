@@ -1,5 +1,10 @@
+@font-face {
+	font-family: 'TrebuchetMS'; 
+	src: url(/fonts/TrebuchetMS.ttf); 
+}
+
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'TrebuchetMS', sans-serif;
 }
 
 body {
@@ -77,7 +82,7 @@ body {
     padding-left: 30px;
     padding-right: 30px;
     display: block;
-    font-family: 'Roboto';
+    font-family: 'TrebuchetMS', sans-serif;
 }
 
 .header_contacts-callback:hover {
@@ -184,11 +189,25 @@ body {
 .screen {
     height: calc(100vh - 70px);
     background-color: rgba(255, 255, 255, .7);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    align-items: center;
 }
 
 .screen h1 {
     margin: 0;
     font-size: 55px;
+}
+
+.screen p {
+    font-size: 30px;
+    max-width: 390px;
+}
+
+.screen_left {
+    max-width: 480px;
+    justify-self: end;
 }
 
 /* /screen */
