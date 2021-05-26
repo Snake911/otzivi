@@ -21,10 +21,10 @@ body {
 }
 
 .background {
-    height: calc(100vh - 70px);
+    height: 100vh;
     width: 100vw;
     position: fixed;
-    top: 70px;
+    top: 0px;
     background-image: url('images/background_map.png');
     background-size:cover;
     background-position: center;
@@ -39,6 +39,7 @@ body {
     height: 70px;
     position: sticky;
     top: 0;
+    background-color: #fff;
 }
 
 .header_logo {
@@ -208,6 +209,39 @@ body {
 .screen_left {
     max-width: 480px;
     justify-self: end;
+}
+
+.screen_right {
+    position: relative;
+}
+
+.screen_right .company {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.screen_right .company>img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.screen_right .phone {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(50%, -50%);
+}
+
+.screen_right .phone img.marker {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(60px, -35px);
 }
 
 /* /screen */
