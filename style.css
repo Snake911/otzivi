@@ -40,6 +40,7 @@ body {
     position: sticky;
     top: 0;
     background-color: #fff;
+    z-index: 100;
 }
 
 .header_logo {
@@ -189,6 +190,7 @@ body {
 /* screen */
 .screen {
     height: calc(100vh - 70px);
+    min-height: 600px;
     background-color: rgba(255, 255, 255, .7);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -208,7 +210,50 @@ body {
 
 .screen_left {
     max-width: 480px;
+    height: 500px;
     justify-self: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.screen .form_callback {
+    display: grid;
+    width: 350px;
+    grid-gap: 5px;
+}
+
+.screen .form_callback input, 
+.screen .form_callback button {
+    width: 320px;
+    height: 50px;
+    padding-left: 12px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.screen .form_callback button {
+    color: #303030;
+    background-color: #ffe351;
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: 16px;
+    box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 10%);
+    padding: 0 15px;
+    display: block;
+    border: 0;
+}
+
+.screen .form_callback p {
+    color: #a1a1a1;
+    font-size: 10px;
+    font-family: 'Arial',Arial,sans-serif;
+    line-height: 1.55;
+    font-weight: 300;
+}
+
+.screen .form_callback p a {
+    color: inherit;
 }
 
 .screen_right {
@@ -230,22 +275,97 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.screen_right .phone {
+.screen_right .iphone {
     position: absolute;
     top: 50%;
     left: 60%;
     transform: translate(50%, -50%);
 }
 
-.screen_right .phone img.marker {
+.screen_right .iphone img.marker {
     position: absolute;
     right: 0;
     top: 0;
     transform: translate(60px, -35px);
 }
 
+.screen_right .rating {
+    position: absolute;
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.screen_right .rating img {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
 /* /screen */
 
+@media (max-width: 1360px) {
+    .screen {
+        grid-template-columns: 1fr max-content;        
+    }
+
+    .screen_right {
+        margin-right: 120px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .screen {
+        grid-template-columns: 1fr;
+        min-height: 880px;
+        grid-gap: 0;
+    }
+    .screen h1 {
+        max-width: 500px;
+    }
+    .screen_left {
+        max-width: 100%;
+        height: auto;
+        justify-self: center;
+        align-items: center;
+        text-align: center;
+    }
+    .screen_right {
+        justify-self: center;
+    }
+    .screen_right .company {
+        width: 380px;
+        height: 380px;
+    }
+    .screen_right .company>img, 
+    .screen_right .company .rating {
+        display: none;
+    }
+    .screen_right .iphone {
+        width: 150px
+    }
+    .screen_right .iphone img:first-child {
+        display: block;
+        object-fit: contain;
+        width: 100%;
+    }
+
+    .screen .form_callback {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: -20px;
+        transform: translateY(-50%);
+        width: 300px;
+    }
+
+    .screen .form_callback input, 
+    .screen .form_callback button {
+        width: 100%;
+    }
+}
 
 @media (max-width: 960px) {
 
@@ -260,6 +380,28 @@ body {
 
     .header_burger {
         display: block;
+    }
+}
+
+@media (max-width: 680px) {
+    .screen_right {
+        margin-right: 0;
+    }
+    .screen_right .company {
+        transform: rotate(90deg);
+        width: 280px;
+        height: 280px;
+    }
+    .screen_right .iphone {
+        top: 50%;
+        left: 0;
+        transform: translate(0%, -50%) rotate(-90deg);
+        width: 100px;
+    }
+    .screen .form_callback {
+        left: 50%;
+        transform: translate(-50%, -30%);
+        width: 200px;
     }
 }
 
