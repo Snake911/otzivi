@@ -46,6 +46,20 @@ body {
     background-image: url('images/list_style.svg');
     background-size:cover;
     background-position: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.title {
+    margin: 0;
+    color: #303030;
+    font-size: 30px;
+    line-height: 1.25;
+    font-weight: 700;
+    max-width: 440px;
+    padding-left: 100px;
+    position: relative;
 }
 
 /* header */
@@ -330,6 +344,21 @@ body {
 .advantages {
     background-color: #f7f7f7;
     padding: 125px 0;
+}
+
+.advantages ol {
+    counter-reset: num;
+    list-style-type: none; 
+}
+
+.advantages ol li:before {
+	content: counter(num); 
+	counter-increment: num;
+	color: #ffe351;
+    font-size: 50px;
+    font-family: 'TrebuchetMS',Arial,sans-serif;
+    line-height: 1.55;
+    font-weight: 700;
 }
 /* /advantages */
 
