@@ -5,6 +5,7 @@
 
 * {
     font-family: 'TrebuchetMS', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
@@ -57,7 +58,7 @@ body {
     font-size: 30px;
     line-height: 1.25;
     font-weight: 700;
-    max-width: 440px;
+    max-width: 540px;
     padding-left: 100px;
     position: relative;
 }
@@ -341,14 +342,40 @@ body {
 /* /screen */
 
 /* advantages */
+
+
 .advantages {
     background-color: #f7f7f7;
     padding: 125px 0;
 }
 
+.advantages_content {
+    margin-top: 30px;
+}
+
 .advantages ol {
     counter-reset: num;
-    list-style-type: none; 
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 190px);
+    grid-gap: 40px 80px;
+    justify-content: center;
+    padding: 0;
+}
+
+.advantages ol li {
+    max-width: 190px;
+    height: 190px;
+    border-width: 1px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    background-position: center center;
+    border-color: #c4c4c4;
+    border-style: dashed;
+    box-shadow: 0px 0px 10px 0px rgb(48 48 48 / 20%);    
+    position: relative;
+    padding: 20px;
+    text-align: center;
 }
 
 .advantages ol li:before {
@@ -359,6 +386,9 @@ body {
     font-family: 'TrebuchetMS',Arial,sans-serif;
     line-height: 1.55;
     font-weight: 700;
+    position: absolute;
+    top: 0;
+    left: 15px;
 }
 /* /advantages */
 
@@ -373,6 +403,9 @@ body {
 }
 
 @media (max-width: 1200px) {
+    .screen {
+        height: auto;
+    }
     .screen>div {
         grid-template-columns: 1fr;
         min-height: 880px;
@@ -437,9 +470,26 @@ body {
     .header_burger {
         display: block;
     }
+
+    .advantages ol {
+        grid-template-columns: repeat(2, 190px);
+    }
+
+    .advantages ol li:last-child {
+        grid-column-end: 3;
+        grid-column-start: 1;
+        justify-self: center;
+    }    
 }
 
 @media (max-width: 680px) {
+
+    .title {
+        padding-left: 0;
+    }
+    .title::before {
+        display: none;
+    }
     .screen_right {
         margin-right: 0;
     }
@@ -458,6 +508,15 @@ body {
         left: 50%;
         transform: translate(-50%, -30%);
         width: 200px;
+    }
+
+    .advantages ol {
+        grid-template-columns: repeat(1, 190px);
+    }
+
+    .advantages ol li:last-child {
+        grid-column-end: unset;
+        grid-column-start: unset;
     }
 }
 
