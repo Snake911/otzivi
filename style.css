@@ -98,7 +98,7 @@ body {
 
 .header_contacts>* span {
     padding-left: 10px;
-    max-width: 220px;
+    max-width: 230px;
 }
 
 .header_contacts-callback {
@@ -391,6 +391,13 @@ body {
     left: 15px;
 }
 /* /advantages */
+
+/* why */
+.why {
+    background-color: #fff;
+    padding-top: 125px;
+    padding-bottom: 125px;
+}
 
 @media (max-width: 1360px) {
     .screen>div {
