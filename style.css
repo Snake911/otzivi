@@ -399,6 +399,24 @@ body {
     padding-bottom: 125px;
 }
 
+.why-row {
+    display: grid;
+    grid-template-columns: 390px 1fr;
+    grid-gap: 50px;
+    margin: 60px 0;
+}
+
+.why-img {
+
+}
+
+.why-img img {
+    display: block;
+    width: 75%;
+    object-fit: contain;
+    margin: auto;
+}
+
 @media (max-width: 1360px) {
     .screen>div {
         grid-template-columns: 1fr max-content;        
