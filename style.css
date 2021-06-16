@@ -406,15 +406,52 @@ body {
     margin: 60px 0;
 }
 
-.why-img {
+.why-row.why-right {
+    grid-template-columns: 1fr 390px;
+}
 
+.why-img {
+    background-image: url(images/why_back.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: color;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.why-img.why-img_right, 
+.why-img.why-img_right img {
+    transform: rotate(180deg);
 }
 
 .why-img img {
     display: block;
     width: 75%;
     object-fit: contain;
-    margin: auto;
+    margin: 60px auto;
+    margin-right: 30px;
+}
+
+.why-text {
+    margin-top: 60px;
+    color: #303030;
+    font-size: 18px;
+    font-family: 'TrebuchetMS',Arial,sans-serif;
+    line-height: 1.5;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-gap: 60px;
+    height: fit-content;
+    align-items: center;
+}
+
+.why-text::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-image: url('images/plus.svg');
+    background-size: cover;
 }
 
 @media (max-width: 1360px) {
