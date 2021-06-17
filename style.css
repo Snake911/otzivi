@@ -58,9 +58,10 @@ body {
     font-size: 30px;
     line-height: 1.25;
     font-weight: 700;
-    max-width: 540px;
+    max-width: 550px;
     padding-left: 100px;
     position: relative;
+    box-sizing: content-box;
 }
 
 /* header */
@@ -454,6 +455,36 @@ body {
     background-size: cover;
 }
 
+/* /Why */
+/* Comparison */
+.comparison {
+    background: #F7F7F7;
+    padding-top: 125px;
+    padding-bottom: 125px;
+}
+
+.comparison-question {
+    padding-left: 100px;
+    color: #303030;
+    font-size: 20px;
+}
+
+.comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 70px 1fr;
+    grid-gap: 40px;
+    align-items: center;
+    margin: 70px;
+}
+
+.comparison-row img {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+}
+
+/* /Comparison */
+
 @media (max-width: 1360px) {
     .screen>div {
         grid-template-columns: 1fr max-content;        
@@ -519,7 +550,6 @@ body {
 }
 
 @media (max-width: 960px) {
-
     .limiter {
         padding-left: 20px;
         padding-right: 20px;
@@ -541,7 +571,20 @@ body {
         grid-column-end: 3;
         grid-column-start: 1;
         justify-self: center;
-    }    
+    }
+
+    .why-row, 
+    .why-row.why-right {
+        grid-template-columns: 1fr;
+    }
+
+    .why-row.why-right .why-img {
+        order: 1;
+    }
+
+    .why-text {
+        margin-top: 0;
+    }
 }
 
 @media (max-width: 680px) {
@@ -579,6 +622,18 @@ body {
     .advantages ol li:last-child {
         grid-column-end: unset;
         grid-column-start: unset;
+    }
+
+    .why-row {
+        grid-gap: 10px;
+    }
+
+    .why-text {
+        grid-gap: 20px;
+    }
+
+    .why-img img {
+        margin-right: 15px;
     }
 }
 
