@@ -480,6 +480,7 @@ body {
 .comparison-row img {
     display: block;
     width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -585,6 +586,10 @@ body {
     .why-text {
         margin-top: 0;
     }
+    .comparison-row {
+        grid-template-columns: 1fr;
+        grid-template-rows: 460px 70px 460px;
+    }
 }
 
 @media (max-width: 680px) {
@@ -634,6 +639,15 @@ body {
 
     .why-img img {
         margin-right: 15px;
+    }
+
+    .comparison-question {
+        padding-left: 0;
+    }
+
+    .comparison-row {
+        margin: 0;
+        grid-template-rows: 1fr 70px 1fr;
     }
 }
 
