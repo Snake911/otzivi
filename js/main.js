@@ -1,5 +1,8 @@
 $(document).ready(function() {
-    new WOW().init();
+    wow = new WOW({
+        mobile: false
+    })
+    wow.init();
     $('.phone').mask('+7 (999) 999-99-99');
     $('.header_burger').click(function() {
         $(this).toggleClass('opened');
@@ -16,4 +19,46 @@ $(document).ready(function() {
             $('.screen_left').append($('.form_callback'));
         }
     });
+
+    $('.agree [type="checkbox"]').click(function() {
+        if($(this).is(':checked')) {
+            $('.agree').addClass('checked');
+        } else {
+            $('.agree').removeClass('checked');
+        }
+    });
+
+    $('.order').click(function() {
+        modalOpen($('.modal-order'));
+    });
+
+    $('.overlay').click(function(e) {
+        if(e.target == e.currentTarget) {
+            modalClose();
+        }        
+    });
+
+    $('.close-modal').click(function(e) {
+        if(e.target == e.currentTarget) {
+            modalClose();
+        }        
+    });
+
+    $(document).keydown(function(e) {
+        if(e.keyCode === 27) {
+            modalClose();
+        }
+    });
+
+    function modalOpen(modal) {
+        $('.overlay').show();
+        $('body').css('overflow-y', 'hidden');
+        modal.show();
+    }
+
+    function modalClose() {
+        $('.overlay').hide();
+        $('body').css('overflow-y', '');
+        $('.modal').hide();
+    }
 });
